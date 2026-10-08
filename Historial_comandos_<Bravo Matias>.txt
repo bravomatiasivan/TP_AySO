@@ -134,3 +134,7 @@ ls -la
 mv .bash_history "Historial_comandos_<Bravo Matias>.txt"
 ls -la
 cat Historial_comandos_\<Bravo\ Matias\>.txt
+git add .
+git status
+git commit -m "ADD: Añadiendo historial de comandos"
+git push
