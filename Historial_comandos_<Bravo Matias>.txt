@@ -1,0 +1,136 @@
+#punto 1
+ssh-keygen
+ls -la
+cd .ssh
+ls -la
+cat id_rsa.pub 
+cd
+mkdir repogit_parcial
+cd repogit_parcial/
+git clone git@github.com:bravomatiasivan/TP_AySO.git
+ls -la
+cd TP_AySO/
+ls -l
+
+#punto 2
+man grep
+grep -i Vagrant /etc/shadow
+sudo grep -i Vagrant /etc/shadow
+sudo grep -i Vagrant /etc/shadow | awk -F ":" '{print$2}'
+sudo grep -i Vagrant /etc/shadow | awk -F ":" '{print$2}' > pass_usuario.txt
+cat pass_usuario.txt 
+whoami
+echo "usuario = $(whoami)" >> pass_usuario.txt 
+cat pass_usuario.txt 
+ls -la
+
+#punto 3
+git add .
+git status
+git config --global user.email "bravomatiasivan@gmail.com"
+git config --global user.name "bravomatiasivan"
+git commit -m "ADD: agregado ejercicio 2"
+git status
+git push
+git status
+
+#punto 4
+ls -la /home/vagrant
+ls -la /home/vagrant > permisos.txt
+ls -la
+echo 'ls -la > permisos.txt' >> permisos.txt 
+cat permisos.txt 
+git add .
+git status
+git commit -m "ADD: Añadiendo archivo permisos"
+ls -la
+git push
+
+#punto 5
+man grep
+cd
+sudo cat /etc/passwd
+sudo grep -v root: /etc/passwd
+sudo grep -v root: /etc/passwd | head -n 10
+sudo grep -v root: /etc/passwd | head -n 10 | awk -F '{print$1}'
+sudo grep -v root: /etc/passwd | head -n 10 | awk -F ":" '{print$1}'
+sudo grep -v root: /etc/passwd | head -n 10 | awk -F ":" '{print$1}' > lista_ordenada.txt
+ls -la
+mv lista_ordenada.txt repogit_parcial/TP_AySO/
+cd repogit_parcial/TP_AySO/
+ls -la
+git add .
+git status
+git commit -m "ADD: Listado de usuarios ordenada"
+git status
+git push
+
+#punto 6
+ls -la
+cat README.md 
+echo 'Alumno: <Bravo Matias' >> README.md 
+echo 'Division: < 111 >' >> README.md 
+echo 'Turno: < mañana >' >> README.md 
+cat README.md 
+git restore README.md
+cat README.md 
+cat << FIN >> README.md 
+
+Alumno: < Bravo Matias >
+Comision: < 111 >
+Turno: < mañana >
+FIN
+
+cat README.md 
+add .
+git add .
+git status
+git commit -i "docs: agregando informacion del alumno"
+git status
+git push
+
+#punto 7
+sudo snap tree
+sudo snap install tree
+mkdir -p universidad/ {alumnos/legajos{1..15}, profesores/legajos{1..5}}
+ls -la
+cd universidad/
+ls -l
+cd
+cd profesores/
+ls -la
+cd
+rm -rf profesores 
+rm -rf \{alumnos/
+rm -rf universidad/
+ls -la
+mkdir -p universidad/alumnos/legajos{1..15},profesores/legajos{1..5}
+tree universidad/
+rm -rf universidad/
+mkdir -p universidad/{alumnos/legajos{1..15},profesores/legajos{1..5}}
+tree universidad/
+cd repogit_parcial/TP_AySO/
+ls -la 
+cd
+cat .bash_history
+
+#punto 8 
+cd repogit_parcial/TP_AySO/
+echo 'mkdir -p universidad/{alumnos/legajos{1..15},profesores/legajos{1..5}}' > script_dir.sh
+cat script_dir.sh 
+add .
+git add .
+git status
+git commit -m "ADD: Añadiendo script"
+git push
+
+#punto 9
+history -a /home/vagrant/.bash_history 
+cat /home/vagrant/.bash_history
+history -a
+ls -la
+cp /home/vagrant/.bash_history /home/vagrant/repogit_parcial/TP_AySO/
+ls -la
+mv .bash_history "Historial_comandos_<Bravo Matias>.txt"
+ls -la
+cat Historial_comandos_\<Bravo\ Matias\>.txt
